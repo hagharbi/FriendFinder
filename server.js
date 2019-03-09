@@ -1,6 +1,7 @@
 // DEPENDENCIES
 var express = require("express");
-// var bodyParser = require("body-parser");
+var bodyParser = require("body-parser");
+var webpack = require("webpack");
 
 // EXPRESS CONFIGURATION
 var app = express();
@@ -8,8 +9,8 @@ var PORT = process.env.PORT || 8080;
 
 // EXPRESS APP SETUP
 // Sets up the Express App to handle data parsing
-app.use(express.urlencoded({ extended: true}));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.json());
 
 // ROUTER
 // These routes direct our server to a series of route files
