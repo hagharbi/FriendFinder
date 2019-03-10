@@ -19,8 +19,8 @@ module.exports = function(app) {
             difference: 10000
             }; 
             
-        var newFriend = req.body;
-        var newFriendScore = newFriend.preferences;
+        var newFriendData = req.body;
+        var newFriendScore = newFriendData.preferences;
         var totalDiff = 0;
 
         // Calculating totals 
@@ -35,7 +35,7 @@ module.exports = function(app) {
                 var currentUserScore = newFriendScore[j];
 
                 totalDiff += Math.abs(currentUserScore - currentFriendScore);
-                // totalDiff += Math.abs(friendsList[i].preferences[j] - newFriend.preferences[j]);
+                // totalDiff += Math.abs(friendsList[i].preferences[j] - newFriendData.preferences[j]);
 
                 if (totalDiff <= friendMatch.difference) {
                     friendMatch.name = friendsList[i].name,
@@ -45,8 +45,8 @@ module.exports = function(app) {
             }
         }
             
-        friendsList.push(newFriend);
+        friendsList.push(newFriendData);
         res.json(friendMatch);
         console.log(friendMatch);
     });
-}
+};
