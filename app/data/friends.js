@@ -64,7 +64,7 @@ var friendsList = [
             5,
             2
         ]
-    },
+    }
 ];
 
 // Export the array to other files 
